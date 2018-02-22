@@ -31,9 +31,13 @@ class Tests(object):
         Test the algorithm implemented using random generated data.
     """
     def random_test_sort(self, algo):
-        pass
+        random_l = random_list()
+        correct, incorrect = 0, 0
 
+        if sorted(algo(random_l)):
+            correct += 1
+        else:
+            incorrect += 1
 
-tst = Tests()
-tst.test_sort()
+        self.show_results(correct, incorrect)
 
