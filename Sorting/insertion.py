@@ -26,4 +26,7 @@ def insertion_sort(l):
     return l
 
 
-Tests().random_test_sort(insertion_sort)
+test = Tests(insertion_sort)
+test.sort_custom_input([5, 20, 1, 4])
+test.sort_random_inputs()
+test.show_results()
