@@ -1,15 +1,6 @@
 import random
 
 
-def random_list():
-    l_data = []
-
-    for n in range(random.randint(2, 5)):
-        l_data.append(random.randint(0, 200))
-
-    return l_data
-
-
 class Tests(object):
     def __init__(self, algo):
         self.correct = 0
@@ -27,8 +18,11 @@ class Tests(object):
             self.incorrect += 1
 
     def sort_random_inputs(self):
-        for c in range(random.randint(10, 20)):
-            if sorted(self.algo(random_list())):
+        for c in range(random.randint(1, 200)):
+            c = range(0, 11000)
+            random_l = random.sample(c, random.randint(1, 200))
+
+            if sorted(self.algo(random_l)):
                 self.correct += 1
             else:
                 self.incorrect -= 1
