@@ -1,5 +1,5 @@
 
-from SortTest import Tests
+from test_sort import Tests
 
 
 def insertion_sort(l):
