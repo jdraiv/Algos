@@ -11,11 +11,7 @@ import random
 # ! J = Loop variable             !
 
 def quick_sort(l):
-    """
-    pivot = random.randint(1, (len(l)))
-    print("Pivot index %s" % pivot)
-    """
-    def sort(l):
+    def partition(l):
         pivot_index = len(l) - 1
         pivot_value = l[pivot_index]
         i = -1
@@ -38,11 +34,10 @@ def quick_sort(l):
         pivot_index = i + 1
         l.insert(pivot_index, pivot_value)
 
-        print(l)
+        return l
+    partition(l)
 
 
-test = [10, 80, 30, 90, 40, 50, 70]
-test_two = [8, 3, 1, 7, 0, 10, 2]
-test_three = [7, 2, 1, 8, 6, 3, 5, 4]
-quick_sort(test_three)
+l_one = [7, 2, 1, 8, 6, 3, 5, 4]
+quick_sort(l_one)
 
