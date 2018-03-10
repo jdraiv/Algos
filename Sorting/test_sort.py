@@ -10,7 +10,7 @@ class Tests(object):
         self.algo = algo
 
     def run_time(self):
-        start_time = time.time()
+        start_time = time.process_time()
         return start_time
 
     def show_results(self):
@@ -22,10 +22,10 @@ class Tests(object):
 
         if sorted(self.algo(i)):
             self.correct += 1
-            print("Test passed in %s seconds" % (time.time() - t))
+            print("Test passed in %s seconds" % (time.process_time() - t))
         else:
             self.incorrect += 1
-            print("Test failed in %s seconds" % (time.time() - t))
+            print("Test failed in %s seconds" % (time.process_time() - t))
 
     def sort_random_inputs(self):
         for c in range(random.randint(1, 50)):
@@ -36,7 +36,7 @@ class Tests(object):
 
             if sorted(self.algo(random_l)):
                 self.correct += 1
-                print("Test passed in: %s seconds" % (time.time() - t))
+                print("Test passed in: %s seconds" % (time.process_time() - t))
             else:
                 self.incorrect -= 1
-                print("Test failed in: %s seconds" % (time.time() - t))
+                print("Test failed in: %s seconds" % (time.process_time() - t))
